@@ -43,27 +43,27 @@
     "size": "size-limit"
   },
   "dependencies": {
-    "@microsoft/api-extractor": "^7.58.12",
-    "esbuild": "^0.28.1",
     "goober": "^2.1.19",
-    "octane": "^0.1.25",
-    "vite": "^8.2.0",
-    "vite-plugin-dts": "^5.0.3"
+    "octane": "^0.1.28"
   },
   "devDependencies": {
-    "@octanejs/testing-library": "^0.1.22",
-    "@octanejs/vite-plugin": "^0.1.25",
+    "@microsoft/api-extractor": "^7.58.12",
+    "@octanejs/testing-library": "^0.1.25",
+    "@octanejs/vite-plugin": "^0.1.28",
     "@swc/cli": "^0.8.1",
     "@swc/core": "^1.15.47",
     "@testing-library/jest-dom": "^7.0.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
+    "esbuild": "^0.28.1",
     "esbuild-minify-templates": "^0.13.1",
     "install": "^0.13.0",
     "oxfmt": "^0.62.0",
     "oxlint": "^1.77.0",
     "oxlint-tsgolint": "^7.0.2001",
     "typescript": "^7.0.2",
+    "vite": "^8.2.0",
+    "vite-plugin-dts": "^5.0.3",
     "vitest": "^4.1.10"
   },
   "peerDependencies": {
