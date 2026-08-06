@@ -1,19 +1,18 @@
 export const genId = (() => {
-  let count = 0;
-  return () => {
-    return (++count).toString();
-  };
-})();
+  let count = 0
+  return () => (++count).toString()
+})()
 
 export const prefersReducedMotion = (() => {
   // Cache result
-  let shouldReduceMotion: boolean | undefined = undefined;
+  let shouldReduceMotion: boolean | undefined = undefined
 
   return () => {
     if (shouldReduceMotion === undefined && typeof window !== 'undefined') {
-      const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
-      shouldReduceMotion = !mediaQuery || mediaQuery.matches;
+      const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)')
+      // oxlint-disable-next-line typescript/no-unnecessary-condition
+      shouldReduceMotion = !mediaQuery || mediaQuery.matches
     }
-    return shouldReduceMotion;
-  };
-})();
+    return shouldReduceMotion
+  }
+})()

@@ -1,19 +1,20 @@
-<a href="https://react-hot-toast.com/"><img alt="react-hot-toast - Try it out" src="https://github.com/timolins/react-hot-toast/raw/main/assets/header.svg"/></a>
+<div align="center"><strong>octane-hot-toast</strong></div>
+<div align="center">Port of <a href="https://github.com/timolins/react-hot-toast">react-hot-toast</a> for  <a href="https://octanejs.dev/">octane</a></div>
 
-<div align="center">
-    <img src="https://badgen.net/npm/v/react-hot-toast" alt="NPM Version" />
-  <img src="https://badgen.net/bundlephobia/minzip/react-hot-toast" alt="minzipped size"/>
-    <img src="https://github.com/timolins/react-hot-toast/workflows/CI/badge.svg" alt="Build Status" />
+<!-- <div align="center">
+    <img src="https://badgen.net/npm/v/octane-hot-toast" alt="NPM Version" />
+  <img src="https://badgen.net/bundlephobia/minzip/octane-hot-toast" alt="minzipped size"/>
+    <img src="https://github.com/timolins/octane-hot-toast/workflows/CI/badge.svg" alt="Build Status" />
 </a>
-</div>
+</div> -->
 <br />
-<div align="center"><strong>Smoking hot  Notifications for React.</strong></div>
+<div align="center"><strong>Smoking hot  Notifications for Octane.</strong></div>
 <div align="center"> Lightweight, customizable and beautiful by default.</div>
 <br />
 <div align="center">
-<a href="https://react-hot-toast.com/">Website</a> 
+<a href="https://react-hot-toast.com/">Website</a>
 <span> · </span>
-<a href="https://react-hot-toast.com/docs">Documentation</a> 
+<a href="https://react-hot-toast.com/docs">Documentation</a>
 <span> · </span>
 <a href="https://twitter.com/timolins">Twitter</a>
 </div>
@@ -36,16 +37,22 @@
 
 ## Installation
 
+#### With bun
+
+```sh
+bun i octane-hot-toast
+```
+
 #### With pnpm
 
 ```sh
-pnpm add react-hot-toast
+pnpm add octane-hot-toast
 ```
 
 #### With NPM
 
 ```sh
-npm install react-hot-toast
+npm install octane-hot-toast
 ```
 
 ## Getting Started
@@ -53,9 +60,9 @@ npm install react-hot-toast
 Add the Toaster to your app first. It will take care of rendering all notifications emitted. Now you can trigger `toast()` from anywhere!
 
 ```jsx
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'octane-hot-toast'
 
-const notify = () => toast('Here is your toast.');
+const notify = () => toast('Here is your toast.')
 
 const App = () => {
   return (
@@ -63,8 +70,8 @@ const App = () => {
       <button onClick={notify}>Make me a toast</button>
       <Toaster />
     </div>
-  );
-};
+  )
+}
 ```
 
 ## Documentation

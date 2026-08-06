@@ -1,104 +1,75 @@
 {
-  "name": "react-hot-toast",
-  "description": "Smoking hot React Notifications. Lightweight, customizable and beautiful by default.",
+  "name": "octane-hot-toast",
   "version": "2.6.0",
-  "author": "Timo Lins",
-  "license": "MIT",
-  "repository": "timolins/react-hot-toast",
+  "description": "Smoking hot Octane Notifications. Lightweight, customizable and beautiful by default.",
   "keywords": [
-    "react",
     "notifications",
-    "toast",
-    "snackbar"
+    "octane",
+    "snackbar",
+    "toast"
   ],
-  "main": "dist/index.js",
+  "license": "MIT",
+  "author": "Timo Lins",
+  "repository": "git+https://github.com/efossvold/octane-hot-toast",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "main": "dist/lib/index.cjs",
+  "module": "dist/lib/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "types": "./dist/lib/index.d.ts",
+      "import": "./dist/lib/index.js",
+      "require": "./dist/lib/index.cjs"
     },
     "./headless": {
-      "types": "./headless/index.d.ts",
-      "import": "./headless/index.mjs",
-      "require": "./headless/index.js"
+      "types": "./dist/headless/index.d.ts",
+      "import": "./dist/headless/headless/index.js",
+      "require": "./dist/headless/headless/index.cjs"
     }
-  },
-  "files": [
-    "headless",
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
   },
   "scripts": {
-    "start": "tsup --watch",
-    "build": "tsup",
-    "test": "jest --runInBand",
-    "setup": "pnpm i && cd site && pnpm i && cd .. && pnpm run link",
-    "link": "pnpm link ./site/node_modules/react && pnpm link ./site/node_modules/react-dom",
+    "build": "bun run build:clean && bun run build:lib && bun run build:headless",
+    "build:clean": "rm -rf dist/*",
+    "build:lib": "vite build --config vite.config.lib.ts",
+    "build:headless": "vite build --config vite.config.headless.ts",
+    "test": "vitest",
+    "lint": "oxlint --fix -f stylish",
     "size": "size-limit"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "prettier src --ignore-unknown --write"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "arrowParens": "always",
-    "trailingComma": "es5"
-  },
-  "size-limit": [
-    {
-      "path": "dist/index.js",
-      "limit": "5.5 KB"
-    },
-    {
-      "path": "dist/index.mjs",
-      "limit": "5.5 KB"
-    },
-    {
-      "path": "headless/index.js",
-      "limit": "2.5 KB"
-    },
-    {
-      "path": "headless/index.mjs",
-      "limit": "2.5 KB"
-    }
-  ],
-  "devDependencies": {
-    "@jest/types": "^29.6.3",
-    "@size-limit/preset-small-lib": "^7.0.8",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.1.0",
-    "@types/jest": "^29.5.14",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
-    "esbuild-minify-templates": "^0.13.1",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "prettier": "^2.8.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "size-limit": "^7.0.8",
-    "ts-jest": "^29.2.5",
-    "tslib": "^2.8.1",
-    "tsup": "^6.7.0",
-    "typescript": "^5.7.2"
-  },
   "dependencies": {
-    "csstype": "^3.1.3",
-    "goober": "^2.1.16"
+    "@microsoft/api-extractor": "^7.58.12",
+    "esbuild": "^0.28.1",
+    "goober": "^2.1.19",
+    "octane": "^0.1.25",
+    "vite": "^8.2.0",
+    "vite-plugin-dts": "^5.0.3"
+  },
+  "devDependencies": {
+    "@octanejs/testing-library": "^0.1.22",
+    "@octanejs/vite-plugin": "^0.1.25",
+    "@swc/cli": "^0.8.1",
+    "@swc/core": "^1.15.47",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "esbuild-minify-templates": "^0.13.1",
+    "install": "^0.13.0",
+    "oxfmt": "^0.62.0",
+    "oxlint": "^1.77.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
   },
   "peerDependencies": {
-    "react": ">=16",
-    "react-dom": ">=16"
+    "octane": ">=0.1.25"
   },
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+  "engines": {
+    "node": ">=22"
+  }
 }
