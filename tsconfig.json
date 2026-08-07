@@ -1,9 +1,9 @@
 {
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
-  "include": [ "src", "types", "test" ],
+  "include": [ "src", "types", "test", "cypress" ],
   "compilerOptions": {
     "module": "esnext",
-    "types": [ "vitest/globals", "@testing-library/jest-dom" ],
+    "types": [ "vitest/globals", "@testing-library/jest-dom", "cypress" ],
     "lib": [ "dom", "esnext" ],
     // output .d.ts declaration files for consumers
     "declaration": true,
@@ -34,6 +34,5 @@
     // "noUncheckedIndexedAccess": true,
     "noUnusedLocals": false, // Covered by oxlint's no-unused-vars rule
     "noUnusedParameters": true,
-
   }
 }

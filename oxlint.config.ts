@@ -1,17 +1,7 @@
 import { defineConfig } from 'oxlint'
 
 export default defineConfig({
-  plugins: [
-    'eslint',
-    'typescript',
-    'unicorn',
-    'react',
-    'react-perf',
-    'oxc',
-    'import',
-    'promise',
-    'vitest',
-  ],
+  plugins: ['eslint', 'typescript', 'unicorn', 'react', 'react-perf', 'oxc', 'import', 'promise'],
   categories: {
     correctness: 'error',
     nursery: 'warn',
@@ -149,26 +139,16 @@ export default defineConfig({
       },
     },
     {
-      files: ['**/*.test.ts?'],
+      files: ['**/*.cy.tsx', 'cypress/**/*.ts'],
+      globals: {
+        cy: 'readonly',
+        Cypress: 'readonly',
+      },
       rules: {
-        'prefer-importing-vitest-globals': 'off',
-        'vitest/no-hooks': 'off',
-        // 'vitest/prefer-expect-assertions': 'off',
-        'vitest/require-mock-type-parameters': 'off',
-        'vitest/no-focused-tests': 'error',
-        'jest/no-focused-tests': 'error',
+        'promise/always-return': 'off',
       },
     },
   ],
 
-  ignorePatterns: [
-    '.vscode',
-    'bindings',
-    'build',
-    'cypress/coverage',
-    'cypress/reports',
-    'dist',
-    'eslint.config.mjs',
-    'node_modules',
-  ],
+  ignorePatterns: ['.vscode', 'dist', 'node_modules'],
 })
