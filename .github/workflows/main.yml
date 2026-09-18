@@ -22,8 +22,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v7
         with:
-          component: true
-          browser: chrome
+          command: bunx cypress run --component --browser chrome
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v5
