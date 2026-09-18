@@ -1,6 +1,6 @@
 {
   "name": "octane-hot-toast",
-  "version": "2.6.3",
+  "version": "2.6.2",
   "description": "Smoking hot Octane Notifications. Lightweight, customizable and beautiful by default.",
   "keywords": [
     "notifications",
@@ -10,7 +10,10 @@
   ],
   "license": "MIT",
   "author": "Timo Lins",
-  "repository": "git+https://github.com/efossvold/octane-hot-toast",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efossvold/octane-hot-toast.git"
+  },
   "files": [
     "src",
     "dist",
