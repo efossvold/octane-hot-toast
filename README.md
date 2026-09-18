@@ -5,8 +5,7 @@
   <a href="https://www.npmjs.com/package/octane-hot-toast"><img src="https://img.shields.io/npm/v/octane-hot-toast" alt="npm version" /></a>
   <a href="https://www.npmjs.com/package/octane-hot-toast"><img src="https://img.shields.io/npm/dm/octane-hot-toast" alt="downloads"/></a>
   <a href="https://codecov.io/github/efossvold/octane-hot-toast?branch=master"><img src="https://img.shields.io/codecov/c/github/efossvold/octane-hot-toast.svg?maxAge=86400" alt="coverage" /></a>
-  <a href="https://github.com/efossvold/octane-hot-toast/blob/main/LICENSE"><img src="https://img.shields.io/github/license/efossvold/octane-hot-toast?color=yellow
-  " alt="license" /></a>
+  <a href="https://github.com/efossvold/octane-hot-toast/blob/main/LICENSE"><img src="https://img.shields.io/github/license/efossvold/octane-hot-toast?color=brown" alt="license" /></a>
 </div>
 
 <p></p>
