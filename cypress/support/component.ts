@@ -33,3 +33,11 @@ declare global {
 }
 
 Cypress.Commands.add('mount', mount)
+
+Cypress.on(
+  'uncaught:exception',
+  () =>
+    // returning false here prevents Cypress from failing tests that triggers
+    // exceptions such as rejecting promises
+    false,
+)

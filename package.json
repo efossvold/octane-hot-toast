@@ -37,6 +37,7 @@
   },
   "scripts": {
     "test": "cypress open --component --browser chrome",
+    "test:ci": "cypress run --component --browser chrome",
     "lint": "oxlint -f stylish",
     "size": "size-limit"
   },

@@ -114,7 +114,9 @@ describe('Toast tests', () => {
 
       const onClick = async () => {
         const sleep = new Promise((_, reject) => {
-          setTimeout(reject, WAIT_DELAY)
+          setTimeout(() => {
+            reject(new Error('rejected'))
+          }, WAIT_DELAY)
         })
 
         await toast.promise(sleep, {
