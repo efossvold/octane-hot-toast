@@ -1,4 +1,7 @@
-import { keyframes, css } from 'goober'
+/** @jsxImportSource octane */
+import { keyframes } from 'goober'
+
+import { styled } from '../core/styled'
 
 const circleAnimation = keyframes`
 from {
@@ -35,77 +38,36 @@ export interface ErrorTheme {
   secondary?: string
 }
 
-// export const ErrorIcon = (p: ErrorTheme) =>
-//   createElement('div', {
-//     className: css`
-//       width: 20px;
-//       opacity: 0;
-//       height: 20px;
-//       border-radius: 10px;
-//       background: ${p.primary ?? '#ff4b4b'};
-//       position: relative;
-//       transform: rotate(45deg);
+export const ErrorIcon = styled('div')<ErrorTheme>`
+  width: 20px;
+  opacity: 0;
+  height: 20px;
+  border-radius: 10px;
+  background: ${p => p.primary ?? '#ff4b4b'};
+  position: relative;
+  transform: rotate(45deg);
 
-//       animation: ${circleAnimation} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-//       animation-delay: 100ms;
+  animation: ${circleAnimation} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 100ms;
 
-//       &:after,
-//       &:before {
-//         content: '';
-//         animation: ${firstLineAnimation} 0.15s ease-out forwards;
-//         animation-delay: 150ms;
-//         position: absolute;
-//         border-radius: 3px;
-//         opacity: 0;
-//         background: ${p.secondary ?? '#fff'};
-//         bottom: 9px;
-//         left: 4px;
-//         height: 2px;
-//         width: 12px;
-//       }
+  &:after,
+  &:before {
+    content: '';
+    animation: ${firstLineAnimation} 0.15s ease-out forwards;
+    animation-delay: 150ms;
+    position: absolute;
+    border-radius: 3px;
+    opacity: 0;
+    background: ${p => p.secondary ?? '#fff'};
+    bottom: 9px;
+    left: 4px;
+    height: 2px;
+    width: 12px;
+  }
 
-//       &:before {
-//         animation: ${secondLineAnimation} 0.15s ease-out forwards;
-//         animation-delay: 180ms;
-//         transform: rotate(90deg);
-//       }
-//     `,
-//   })
-
-export const ErrorIcon = (p: ErrorTheme) => (
-  <div
-    className={css`
-      width: 20px;
-      opacity: 0;
-      height: 20px;
-      border-radius: 10px;
-      background: ${p.primary ?? '#ff4b4b'};
-      position: relative;
-      transform: rotate(45deg);
-
-      animation: ${circleAnimation} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-      animation-delay: 100ms;
-
-      &:after,
-      &:before {
-        content: '';
-        animation: ${firstLineAnimation} 0.15s ease-out forwards;
-        animation-delay: 150ms;
-        position: absolute;
-        border-radius: 3px;
-        opacity: 0;
-        background: ${p.secondary ?? '#fff'};
-        bottom: 9px;
-        left: 4px;
-        height: 2px;
-        width: 12px;
-      }
-
-      &:before {
-        animation: ${secondLineAnimation} 0.15s ease-out forwards;
-        animation-delay: 180ms;
-        transform: rotate(90deg);
-      }
-    `}
-  />
-)
+  &:before {
+    animation: ${secondLineAnimation} 0.15s ease-out forwards;
+    animation-delay: 180ms;
+    transform: rotate(90deg);
+  }
+`

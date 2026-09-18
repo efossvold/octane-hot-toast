@@ -7,6 +7,13 @@
     <img src="https://github.com/timolins/octane-hot-toast/workflows/CI/badge.svg" alt="Build Status" />
 </a>
 </div> -->
+
+[![version](https://img.shields.io/npm/v/octane-hot-toast)](https://www.npmjs.com/package/octane-hot-toast)
+<!-- [![gzip size](https://img.badgesize.io/https://unpkg.com/octane-hot-toast@latest/dist/octane-hot-toast.modern.js?compression=gzip)](https://unpkg.com/octane-hot-toast) -->
+
+[![downloads](https://img.shields.io/npm/dm/octane-hot-toast)](https://www.npmjs.com/package/octane-hot-toast)
+<!-- [![coverage](https://img.shields.io/codecov/c/github/efossvold/octane-hot-toast.svg?maxAge=2592000)](https://codecov.io/github/cristianbote/octane-hot-toast?branch=master) -->
+
 <br />
 <div align="center"><strong>Smoking hot  Notifications for Octane.</strong></div>
 <div align="center"> Lightweight, customizable and beautiful by default.</div>

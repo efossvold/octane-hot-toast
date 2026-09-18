@@ -1,7 +1,7 @@
 import { mount } from 'cypress-ct-octane-js'
 import { useEffect, useState } from 'octane'
 
-import { resolveValue, toast, Toaster, ToastIcon } from '../src'
+import { CheckmarkIcon, ErrorIcon, resolveValue, toast, Toaster, ToastIcon } from '../src'
 import { defaultTimeouts } from '../src/core/store'
 import { REMOVE_DELAY } from '../src/core/use-toaster'
 
@@ -31,6 +31,16 @@ describe('Toast tests', () => {
   })
 
   describe('Single Toaster behavior', () => {
+    it('should succeed', () => {
+      mount(
+        <>
+          <ErrorIcon />
+          <CheckmarkIcon />
+          <Toaster />
+        </>,
+      )
+    })
+
     it('should dismiss toast', () => {
       const toasterId = getId()
 
@@ -173,6 +183,7 @@ describe('Toast tests', () => {
 
         t.toast('Emoji Icon', {
           icon: '✅',
+          removeDelay: 9999999,
         })
 
         t.toast('Custom Icon', {
@@ -184,8 +195,8 @@ describe('Toast tests', () => {
 
       cy.contains('Success!').should('be.visible')
       cy.contains('Error!').should('be.visible')
-      cy.contains('Loading!').should('be.visible')
       cy.contains('✅').should('be.visible')
+      cy.contains('Loading!').should('be.visible')
       cy.contains('ICON').should('be.visible')
 
       cy.log('Wait for default success timeout')

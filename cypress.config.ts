@@ -4,12 +4,11 @@ import { defineConfig } from 'cypress'
 import istanbul from 'vite-plugin-istanbul'
 
 export default defineConfig({
-  allowCypressEnv: false,
+  video: false,
 
   component: {
-    // @ts-expect-error: TS does not recognize custom "framework" (octane)
     devServer: {
-      framework: 'cypress-ct-octane-js',
+      framework: 'cypress-ct-octane-js' as any,
       bundler: 'vite',
       viteConfig: {
         plugins: [

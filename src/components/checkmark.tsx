@@ -1,4 +1,7 @@
-import { keyframes, css } from 'goober'
+/** @jsxImportSource octane */
+import { keyframes } from 'goober'
+
+import { styled } from '../core/styled'
 
 const circleAnimation = keyframes`
 from {
@@ -31,65 +34,30 @@ export interface CheckmarkTheme {
   secondary?: string
 }
 
-// export const CheckmarkIcon = (p: CheckmarkTheme) =>
-//   createElement('div', {
-//     className: css`
-//       width: 20px;
-//       opacity: 0;
-//       height: 20px;
-//       border-radius: 10px;
-//       background: ${p.primary ?? '#61d345'};
-//       position: relative;
-//       transform: rotate(45deg);
+export const CheckmarkIcon = styled('div')<CheckmarkTheme>`
+  width: 20px;
+  opacity: 0;
+  height: 20px;
+  border-radius: 10px;
+  background: ${p => p.primary ?? '#61d345'};
+  position: relative;
+  transform: rotate(45deg);
 
-//       animation: ${circleAnimation} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-//       animation-delay: 100ms;
-//       &:after {
-//         content: '';
-//         box-sizing: border-box;
-//         animation: ${checkmarkAnimation} 0.2s ease-out forwards;
-//         opacity: 0;
-//         animation-delay: 200ms;
-//         position: absolute;
-//         border-right: 2px solid;
-//         border-bottom: 2px solid;
-//         border-color: ${p.secondary ?? '#fff'};
-//         bottom: 6px;
-//         left: 6px;
-//         height: 10px;
-//         width: 6px;
-//       }
-//     `,
-//   })
-
-export const CheckmarkIcon = (p: CheckmarkTheme) => (
-  <div
-    className={css`
-      width: 20px;
-      opacity: 0;
-      height: 20px;
-      border-radius: 10px;
-      background: ${p.primary ?? '#61d345'};
-      position: relative;
-      transform: rotate(45deg);
-
-      animation: ${circleAnimation} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-      animation-delay: 100ms;
-      &:after {
-        content: '';
-        box-sizing: border-box;
-        animation: ${checkmarkAnimation} 0.2s ease-out forwards;
-        opacity: 0;
-        animation-delay: 200ms;
-        position: absolute;
-        border-right: 2px solid;
-        border-bottom: 2px solid;
-        border-color: ${p.secondary ?? '#fff'};
-        bottom: 6px;
-        left: 6px;
-        height: 10px;
-        width: 6px;
-      }
-    `}
-  />
-)
+  animation: ${circleAnimation} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 100ms;
+  &:after {
+    content: '';
+    box-sizing: border-box;
+    animation: ${checkmarkAnimation} 0.2s ease-out forwards;
+    opacity: 0;
+    animation-delay: 200ms;
+    position: absolute;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-color: ${p => p.secondary ?? '#fff'};
+    bottom: 6px;
+    left: 6px;
+    height: 10px;
+    width: 6px;
+  }
+`

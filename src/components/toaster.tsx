@@ -1,3 +1,4 @@
+/** @jsxImportSource octane */
 // oxlint-disable no-nested-ternary
 import type { CSSProperties } from 'react'
 
@@ -12,28 +13,6 @@ import { prefersReducedMotion } from '../core/utils'
 import { ToastBar } from './toast-bar'
 
 setup(createElement)
-
-// const ToastWrapper = ({ id, className, style, onHeightUpdate, children }: ToastWrapperProps) => {
-//   const ref = useCallback(
-//     (el: HTMLElement | null) => {
-//       if (el) {
-//         const updateHeight = () => {
-//           const { height } = el.getBoundingClientRect()
-//           onHeightUpdate(id, height)
-//         }
-//         updateHeight()
-//         new MutationObserver(updateHeight).observe(el, {
-//           subtree: true,
-//           childList: true,
-//           characterData: true,
-//         })
-//       }
-//     },
-//     [id, onHeightUpdate],
-//   )
-
-//   return createElement('div', { ref, className: className ?? '', style: style ?? '', children })
-// }
 
 const ToastWrapper = ({ id, className, style, onHeightUpdate, children }: ToastWrapperProps) => {
   const ref = useCallback(
@@ -93,62 +72,6 @@ const activeClass = css`
 `
 
 const DEFAULT_OFFSET = 16
-
-// export const Toaster = ({
-//   reverseOrder,
-//   position = 'top-center',
-//   toastOptions,
-//   gutter,
-//   children,
-//   toasterId,
-//   containerStyle,
-//   containerClassName,
-// }: ToasterProps) => {
-//   const { toasts, handlers } = useToaster(toastOptions, toasterId)
-
-//   return createElement('div', {
-//     'data-rht-toaster': toasterId ?? '',
-//     style: {
-//       position: 'fixed',
-//       zIndex: 9999,
-//       top: DEFAULT_OFFSET,
-//       left: DEFAULT_OFFSET,
-//       right: DEFAULT_OFFSET,
-//       bottom: DEFAULT_OFFSET,
-//       pointerEvents: 'none',
-//       ...containerStyle,
-//     },
-//     className: containerClassName ?? '',
-//     onMouseEnter: handlers.startPause,
-//     onMouseLeave: handlers.endPause,
-//     children: toasts.map(t => {
-//       const toastPosition = t.position ?? position
-//       const offset = handlers.calculateOffset(t, {
-//         reverseOrder: reverseOrder ?? false,
-//         gutter: gutter ?? 4,
-//         defaultPosition: position,
-//       })
-//       const positionStyle = getPositionStyle(toastPosition, offset)
-
-//       return createElement(ToastWrapper, {
-//         id: t.id,
-//         key: t.id,
-//         onHeightUpdate: handlers.updateHeight,
-//         className: t.visible ? activeClass : '',
-//         style: positionStyle,
-//         children:
-//           t.type === 'custom'
-//             ? resolveValue(t.message, t)
-//             : children
-//               ? children(t)
-//               : createElement(ToastBar, {
-//                   toast: t,
-//                   position: toastPosition,
-//                 }),
-//       })
-//     }),
-//   })
-// }
 
 export const Toaster = ({
   reverseOrder,

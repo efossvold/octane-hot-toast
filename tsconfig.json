@@ -1,6 +1,6 @@
 {
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
-  "include": [ "src", "types", "test", "cypress" ],
+  "include": [ "src", "test", "cypress", "./*.ts" ],
   "compilerOptions": {
     "module": "esnext",
     "types": [ "vitest/globals", "@testing-library/jest-dom", "cypress" ],
@@ -12,7 +12,7 @@
     "sourceMap": true,
     // use Node's module resolution algorithm, instead of the legacy TS one
     "moduleResolution": "bundler",
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     // transpile JSX to Octane.createElement
     "jsxImportSource": "octane",
     // interop between ESM and CJS modules. Recommended by TS

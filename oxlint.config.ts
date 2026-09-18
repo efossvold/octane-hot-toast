@@ -129,7 +129,6 @@ export default defineConfig({
         'react/jsx-handler-names': 'off',
         'react/jsx-max-depth': 'off',
         'react/jsx-props-no-spreading': 'off',
-        'react/react-compiler': 'error',
         'react/react-in-jsx-scope': 'off',
         'react/function-component-definition': 'off',
 
