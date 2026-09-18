@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@cypress/code-coverage": "^4.0.3",
+    "@octanejs/vite-plugin": "^0.1.55",
     "@types/react": "^19.3.0",
     "cypress": "^16.1.0",
     "cypress-ct-octane-js": "^0.1.38",

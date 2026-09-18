@@ -3,7 +3,7 @@
   "include": [ "src", "test", "cypress", "./*.ts" ],
   "compilerOptions": {
     "module": "esnext",
-    "types": [ "vitest/globals", "@testing-library/jest-dom", "cypress" ],
+    "types": [ "cypress" ],
     "lib": [ "dom", "esnext" ],
     // output .d.ts declaration files for consumers
     "declaration": true,
