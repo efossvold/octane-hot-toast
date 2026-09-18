@@ -11,14 +11,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Generate lockfile
-        run: npm i --legacy-peer-deps
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+
+      - name: Install Dependencies
+        run: bun install --frozen-lockfile
 
       - name: Cypress run
         uses: cypress-io/github-action@v7
         with:
-          command: bunx cypress run --component --browser chrome
           install: false
+          command: bunx cypress run --component
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v5
