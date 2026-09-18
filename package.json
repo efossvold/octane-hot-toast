@@ -38,8 +38,7 @@
   "scripts": {
     "test": "cypress open --component --browser chrome",
     "test:ci": "cypress run --component --browser chrome",
-    "lint": "oxlint -f stylish",
-    "size": "size-limit"
+    "lint": "oxlint -f stylish"
   },
   "dependencies": {
     "goober": "^2.1.19"
